@@ -1,0 +1,34 @@
+---
+- name: Configure Server
+  hosts: all
+  become: yes
+
+  tasks:
+  - name: Install Nginx and PHP
+    apt:
+      name:
+        - nginx
+        - php-fpm
+        - php-mysql
+      state: present
+
+  - name: Create a dedicated user
+    user:
+      name: appuser
+      state: present
+
+  - name: Deploy a basic PHP application
+    copy:
+      content: |
+        <?php
+        echo "Hello, World!";
+        ?>
+      dest: /var/www/html/index.php
+      mode: '0644'
+    notify: restart nginx
+
+  handlers:
+  - name: restart nginx
+    service:
+      name: nginx
+      state: restarted
