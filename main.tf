@@ -31,7 +31,7 @@ resource "aws_security_group" "web_server" {
 }
 
 resource "aws_instance" "web_server" {
-  ami           = "ID_DE_VOTRE_AMI" # Remplacez par l'ID de l'AMI créée
+  ami           = "ami-040875931bcabfd1a"
   instance_type = "t2.micro"
   vpc_security_group_ids = [aws_security_group.web_server.id]
 }
