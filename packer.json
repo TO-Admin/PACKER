@@ -1,4 +1,4 @@
-source "amazon-ebs" "example" {
+source "amazon-ebs" "tp-packer" {
   ami_name           = "tp-packer"
   region             = "eu-west-1"
   source_ami         = "ami-08f9a9c699d2ab3f9"
@@ -8,5 +8,5 @@ source "amazon-ebs" "example" {
 }
 
 build {
-  sources = ["source.amazon-ebs.example"]
+  sources = ["source.amazon-ebs.tp-packer"]
 }
