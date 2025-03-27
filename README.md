@@ -1,11 +1,11 @@
 Commandes utiles :
 
-packer build 
+- packer build 
 
-terraform init 
+- terraform init 
 
-terraform apply
+- terraform apply
 
-terraform destroy
+- terraform destroy
 
 NE PAS OUBLIER DE CHANGER L'AMI ID DANS LE MAIN.TF !
