@@ -5,11 +5,11 @@
 
   tasks:
   - name: Install Nginx and PHP
-    apt:
+    yum:
       name:
         - nginx
         - php-fpm
-        - php-mysql
+        - php-mysqlnd
       state: present
 
   - name: Create a dedicated user
