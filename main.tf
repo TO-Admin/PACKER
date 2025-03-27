@@ -3,7 +3,7 @@ provider "aws" {
 }
 
 resource "aws_security_group" "web_server" {
-  name        = "web_server_sg"
+  name        = "tp-packer"
   description = "Allow HTTP and SSH"
 
   ingress {
